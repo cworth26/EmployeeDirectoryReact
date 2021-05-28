@@ -5,7 +5,8 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Signup />
+      <Header />
+      {/* <EmployeeInfo</> */}
     </div>
   );
 }
