@@ -1,14 +1,15 @@
 import React from "react";
-import Signup from "./pages/Signup";
+import DirectoryHeader from "./components/DirectoryHeader";
 import "./App.css";
+import EmployeeInfo from "./components/Main";
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <Header />
-      {/* <EmployeeInfo</> */}
+      <DirectoryHeader />
+      <EmployeeInfo />
     </div>
   );
-}
+};
 
 export default App;
