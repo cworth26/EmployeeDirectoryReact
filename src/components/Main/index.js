@@ -62,18 +62,23 @@ class EmployeeInfo extends Component {
 
   //create the ability to sort by employee name
   //need help with this
-  sortBy = (key) => {
-    let sortInstructions = this.state.filteredSearch;
-    if (this.state.sortEmployees[key]) {
-      this.setState({
-        filteredSearch: sortInstructions.reverse(),
-        sortEmployees: {
-          ...this.initialSortEmployees,
-        },
-        //i'm lost
-      });
-    }
-  };
+  sortBy(key, data) {
+    console.log(key);
+    this.setState({
+      user: data.sort((a, b) => {
+        if (key === "firstname") {
+          if (this.state.sortEmployees === "asc") {
+            return a.name.first.localeCompare(b.name.first);
+          } else {
+            return b.name.first.localeCompare(a.name.first);
+          }
+        }
+      }),
+    });
+    this.setState({
+      sortEmployees: this.state.sortEmployees === "asc" ? "desc" : "asc",
+    });
+  }
 
   //create the ability to filter by employee HERE
   //done?

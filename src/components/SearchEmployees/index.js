@@ -5,14 +5,14 @@ import "./style.css";
 const SearchEmployees = (props) => {
   return (
     <nav>
-      <form whenSubmit={props.handleFormSubmit}>
+      <form onSubmit={props.handleFormSubmit}>
         <input
           className=""
           value={props.value}
           type="search"
           name="search"
           placeholder="Search"
-          whenChange={props.handleInputChange}
+          onChange={props.handleInputChange}
         />
       </form>
     </nav>
