@@ -4,18 +4,21 @@ import "./style.css";
 //this handles the info when employees are searched for
 const SearchEmployees = (props) => {
   return (
-    <nav>
+    <div className="searchbox">
       <form onSubmit={props.handleFormSubmit}>
         <input
-          className=""
+          className="form"
           value={props.value}
           type="search"
           name="search"
           placeholder="Search"
           onChange={props.handleInputChange}
         />
+        <button className="searchbox" type="Submit">
+          Search
+        </button>
       </form>
-    </nav>
+    </div>
   );
 };
 

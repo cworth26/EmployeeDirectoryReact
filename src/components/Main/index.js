@@ -18,6 +18,7 @@ class EmployeeInfo extends Component {
       name: "",
       phone: "",
       email: "",
+      dob: "",
     };
   }
 
@@ -49,23 +50,12 @@ class EmployeeInfo extends Component {
     e.preventDefault();
   };
 
-  //revisit this!
-  //done?
-  // get initialSortEmployees() {
-  //   return {
-  //     name: "",
-  //     phone: "",
-  //     email: "",
-  //     dob: "",
-  //   };
-  // }
-
   //create the ability to sort by employee name
   //need help with this
   sortBy(key, data) {
     console.log(key);
     this.setState({
-      user: data.sort((a, b) => {
+      user: data.sortBy((a, b) => {
         if (key === "firstname") {
           if (this.state.sortEmployees === "asc") {
             return a.name.first.localeCompare(b.name.first);

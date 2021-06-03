@@ -8,15 +8,14 @@ const Table = (props) => {
     <table className="">
       <thead>
         <tr>
-          <th scope="col" onClick={() => props.sortBy("name")}>
+          <th scope="col" onClick={() => props.sortBy("firstname")}>
             Name
           </th>
-          <th scope="col" onClick={() => props.sortBy("phone")}>
+          <th scope="col">
             Phone
+            <span onClick={() => props.sortBy("email")}>Email</span>
           </th>
-          <th scope="col" onClick={() => props.sortBy("email")}>
-            Email
-          </th>
+          <th scope="col">Email</th>
         </tr>
       </thead>
 
@@ -31,7 +30,8 @@ const Table = (props) => {
                 <img src={employee.picture.thumbnail} alt={Name} />
               </td>
               <td className>"{Name}</td>
-              <a href={employee.phone}>{employee.phone}</a>
+              <a href={`{employee.phone}`}>{employee.phone}</a>
+              <a href={`{employee.email}`}>{employee.email}</a>
             </th>
           );
         })}
